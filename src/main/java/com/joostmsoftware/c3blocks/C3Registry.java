@@ -11,19 +11,17 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class C3Registry {
-    private static String identifier;
-    private static String path;
 
     public static void register() {
         for (int i = 0; i < C3Config.COMPRESSED_BLOCKS.size(); i++) {
             String[] parts = C3Config.COMPRESSED_BLOCKS.get(i).split(":");
-            identifier = parts[0];
-            path = parts[1];
+            String identifier = parts[0];
+            String path = parts[1];
             Identifier id = Identifier.of(identifier, path);
             Block block = Registries.BLOCK.get(id);
             String modelId = identifier + ":block/" + path;
 
-            for (int j = 1; j < 10; j++) {
+            for (int j = 1; j < C3Config.MaxCompressionLevel + 1; j++) {
                 String newPath = "compressed_" + path + '_' + j;
 
                 Block variant = new Block(FabricBlockSettings.copyOf(block));
