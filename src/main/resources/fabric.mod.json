@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "modid",
+  "version": "${version}",
+
+  "name": "Example Mod",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "JoostMsoftware"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/JoostMSoftware-Mods/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.joostmsoftware.example.ExampleMod"
+    ],
+    "fabric-datagen": [
+      "com.joostmsoftware.example.data.ExampleModDataEntrypoint"
+    ],
+    "modmenu": [
+      "com.joostmsoftware.example.compat.ModMenu"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+  "accessWidener" : "modid.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "fabric-api": "*",
+    "minecraft": ">=1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
