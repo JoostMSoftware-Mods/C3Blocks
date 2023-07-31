@@ -31,6 +31,7 @@ public class C3Registry {
 
                 Registry.register(Registries.BLOCK, new Identifier(C3.getModid(), newPath), variant);
                 Registry.register(Registries.ITEM, new Identifier(C3.getModid(), newPath), blockItemVariant);
+                C3Util.addEntry(newPath);
 
                 C3.RESOURCE_PACK.addBlockState(JState.state(JState.variant(JState.model(modelId))), C3.ID(newPath));
             }

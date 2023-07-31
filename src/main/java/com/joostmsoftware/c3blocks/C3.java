@@ -5,11 +5,14 @@ import lombok.Getter;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class C3 implements ModInitializer {
+	@Getter
 	private static final String modid = "c3blocks";
 	public static final String NAMESPACE = "C3Blocks";
 	// This logger is used to write text to the console and the log file.
@@ -25,11 +28,10 @@ public class C3 implements ModInitializer {
 		return new Identifier(modid, path);
 	}
 
-	public static String getModid() {
-		return modid;
-	}
-
 	public static RuntimeResourcePack RESOURCE_PACK = RuntimeResourcePack.create(modid);
+	public static ItemGroup GROUP = FabricItemGroup.builder(ID("group")).entries((displayContext, entries) -> {
+
+	}).build();
 
 	@Override
 	public void onInitialize() {

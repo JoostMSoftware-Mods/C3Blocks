@@ -21,8 +21,8 @@
     "main": [
       "com.joostmsoftware.c3blocks.C3"
     ],
-    "fabric-datagen": [
-      "com.joostmsoftware.c3blocks.data.ExampleModDataEntrypoint"
+    "client": [
+      "com.joostmsoftware.c3blocks.client.C3Client"
     ],
     "modmenu": [
       "com.joostmsoftware.c3blocks.compat.ModMenu"
@@ -31,7 +31,6 @@
   "mixins": [
     "c3blocks.mixins.json"
   ],
-  "accessWidener" : "c3blocks.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
