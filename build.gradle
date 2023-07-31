@@ -32,6 +32,9 @@ repositories {
 		name = "Shedaniel's Maven"
 		url = "https://maven.shedaniel.me/"
 	}
+	maven {
+		url = uri("https://ueaj.dev/maven")
+	}
 }
 
 dependencies {
@@ -51,6 +54,9 @@ dependencies {
 
 	// Mod menu
 	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+	// ARRP
+	modImplementation("net.devtech:arrp:0.6.7")
 }
 
 base {
@@ -58,7 +64,7 @@ base {
 }
 
 loom {
-	accessWidenerPath = file("src/main/resources/modid.accesswidener")
+	accessWidenerPath = file("src/main/resources/c3blocks.accesswidener")
 
 	runs {
 		//

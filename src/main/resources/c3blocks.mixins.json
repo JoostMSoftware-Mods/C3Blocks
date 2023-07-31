@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.joostmsoftware.example.mixin",
+  "package": "com.joostmsoftware.c3blocks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
