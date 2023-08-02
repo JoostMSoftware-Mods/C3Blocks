@@ -29,9 +29,6 @@ public class C3 implements ModInitializer {
 	}
 
 	public static RuntimeResourcePack RESOURCE_PACK = RuntimeResourcePack.create(modid);
-	public static ItemGroup GROUP = FabricItemGroup.builder(ID("group")).entries((displayContext, entries) -> {
-
-	}).build();
 
 	@Override
 	public void onInitialize() {
@@ -40,8 +37,8 @@ public class C3 implements ModInitializer {
 		// Proceed with mild caution.
 		config.load();
 
-		C3Registry.register();
+		C3Registry.registerCommon();
 
-		RRPCallback.AFTER_VANILLA.register(resources -> resources.add(RESOURCE_PACK));
+		LOGGER.info("Loaded all common entries! Have fun with C3");
 	}
 }

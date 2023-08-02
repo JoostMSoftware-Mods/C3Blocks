@@ -30,6 +30,11 @@ public class C3Config extends Config {
     public static List<String> COMPRESSED_BLOCKS = List.of(
             "minecraft:stone",
             "minecraft:dirt",
-            "minecraft:grass_block"
+            "minecraft:sand",
+            "minecraft:diorite",
+            "minecraft:andesite",
+            "minecraft:tuff",
+            "minecraft:deepslate",
+            "minecraft:granite"
     );
 }
