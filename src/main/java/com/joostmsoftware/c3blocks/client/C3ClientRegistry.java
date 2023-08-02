@@ -12,7 +12,6 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class C3ClientRegistry {

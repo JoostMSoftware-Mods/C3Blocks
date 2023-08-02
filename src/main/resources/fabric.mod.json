@@ -9,8 +9,8 @@
     "JoostMSoftware"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/JoostMSoftware-Mods/fabric-example-mod"
+    "issues": "https://github.com/JoostMSoftware-Mods/C3Blocks/issues",
+    "sources": "https://github.com/JoostMSoftware-Mods/C3Blocks"
   },
 
   "license": "MIT",

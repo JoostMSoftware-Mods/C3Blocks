@@ -2,11 +2,8 @@ package com.joostmsoftware.c3blocks;
 
 import com.joostmsoftware.c3blocks.config.C3Config;
 import lombok.Getter;
-import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

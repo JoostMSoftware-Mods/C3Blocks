@@ -6,7 +6,6 @@ import net.devtech.arrp.json.loot.JCondition;
 import net.devtech.arrp.json.loot.JEntry;
 import net.devtech.arrp.json.loot.JLootTable;
 import net.devtech.arrp.json.recipe.*;
-import net.devtech.arrp.json.tags.JTag;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
