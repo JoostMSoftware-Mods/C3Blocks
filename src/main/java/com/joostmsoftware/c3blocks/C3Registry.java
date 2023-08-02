@@ -2,6 +2,11 @@ package com.joostmsoftware.c3blocks;
 
 import com.joostmsoftware.c3blocks.block.CompressedBlock;
 import com.joostmsoftware.c3blocks.config.C3Config;
+import net.devtech.arrp.json.loot.JCondition;
+import net.devtech.arrp.json.loot.JEntry;
+import net.devtech.arrp.json.loot.JLootTable;
+import net.devtech.arrp.json.recipe.*;
+import net.devtech.arrp.json.tags.JTag;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -24,6 +29,37 @@ public class C3Registry {
                 Registry.register(Registries.BLOCK, new Identifier(C3.getModid(), newPath), variant);
                 Item blockItem = new BlockItem(variant, new Item.Settings());
                 Registry.register(Registries.ITEM, new Identifier(C3.getModid(), newPath), blockItem);
+
+                // Runtime recipes
+                if (j == 1) {
+                    C3.RESOURCE_PACK.addRecipe(C3.ID(newPath), JRecipe.shaped(
+                            JPattern.pattern("XXX", "XXX", "XXX"),
+                            JKeys.keys().key("X", JIngredient.ingredient().item(block.asItem())),
+                            JResult.item(blockItem)
+                    ));
+                } else {
+                    String neededMat = "compressed_" + id.getPath() + '_' + (j- 1) ;
+                    Block temp = Registries.BLOCK.get(C3.ID(neededMat));
+
+                    C3.RESOURCE_PACK.addRecipe(C3.ID(newPath), JRecipe.shaped(
+                            JPattern.pattern("XXX", "XXX", "XXX"),
+                            JKeys.keys().key("X", JIngredient.ingredient().item(temp.asItem())),
+                            JResult.item(blockItem)
+                    ));
+                }
+
+                // Runtime block drops aka lootdrops
+                C3.RESOURCE_PACK.addLootTable(C3.ID(newPath), JLootTable
+                        .loot("minecraft:block")
+                        .pool(JLootTable.pool().rolls(1)
+                            .entry(
+                                new JEntry().type("minecraft:item").name(C3.ID(newPath).toString())
+                            )
+                            .condition(
+                                new JCondition().condition("minecraft:survives_explosion")
+                            )
+                        )
+                );
             }
         }
     }
