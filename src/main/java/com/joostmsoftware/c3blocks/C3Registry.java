@@ -47,6 +47,21 @@ public class C3Registry {
                     ));
                 }
 
+                if (j == 1) {
+                    C3.RESOURCE_PACK.addRecipe(C3.ID(newPath + "_to_" + id.getPath()), JRecipe.shapeless(
+                            JIngredients.ingredients().add(JIngredient.ingredient().item(blockItem)),
+                            JResult.itemStack(block.asItem(), 9)
+                    ));
+                } else {
+                    String neededMat = "compressed_" + id.getPath() + '_' + (j- 1) ;
+                    Block temp = Registries.BLOCK.get(C3.ID(neededMat));
+
+                    C3.RESOURCE_PACK.addRecipe(C3.ID(newPath + "_to_" + neededMat), JRecipe.shapeless(
+                            JIngredients.ingredients().add(JIngredient.ingredient().item(blockItem)),
+                            JResult.itemStack(temp.asItem(), 9)
+                    ));
+                }
+
                 // Runtime block drops aka lootdrops
                 C3.RESOURCE_PACK.addLootTable(C3.ID(newPath), JLootTable
                         .loot("minecraft:block")
