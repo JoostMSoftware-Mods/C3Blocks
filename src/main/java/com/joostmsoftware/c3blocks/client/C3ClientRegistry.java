@@ -38,6 +38,8 @@ public class C3ClientRegistry {
                 C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"),JLang.lang().block(C3.ID(newPath), capitalizeString(newPath).replaceAll("[^a-zA-Z0-9]", " ") + "x"));
             }
         }
+        C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("itemGroup.c3blocks.group", "C3 Blocks"));
+        blockList.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent()));
         blockList.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout()));
     }
 

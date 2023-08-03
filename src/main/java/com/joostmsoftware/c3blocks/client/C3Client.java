@@ -7,6 +7,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
@@ -19,9 +20,10 @@ public class C3Client implements ClientModInitializer {
         C3ClientRegistry.registerClient();
         RRPCallback.BEFORE_VANILLA.register(resources -> resources.add(C3.RESOURCE_PACK));
 
-        ItemGroup GROUP = FabricItemGroup.builder(C3.ID("group")).entries((displayContext, entries) -> {
-            blockList.forEach(block -> entries.add(block.asItem()));
-        }).build();
+        ItemGroup GROUP = FabricItemGroup.builder(C3.ID("group"))
+                .icon(() -> new ItemStack(blockList.get(2)))
+                .entries((displayContext, entries) -> blockList.forEach(block -> entries.add(block.asItem())))
+                .build();
 
         C3.LOGGER.info("Loaded all client entries!");
     }
