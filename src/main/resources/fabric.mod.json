@@ -36,6 +36,6 @@
     "fabric-api": "*",
     "minecraft": ">=1.19",
     "java": ">=17",
-    "advanced_runtime_resource_pack": ">=0.6.5"
+    "advanced_runtime_resource_pack": ">=0.6.4"
   }
 }

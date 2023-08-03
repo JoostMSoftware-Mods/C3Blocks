@@ -10,9 +10,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class C3Registry {
 
@@ -20,14 +19,14 @@ public class C3Registry {
 
         for (int i = 0; i < C3Config.COMPRESSED_BLOCKS.size(); i++) {
             Identifier id = new Identifier(C3Config.COMPRESSED_BLOCKS.get(i));
-            Block block = Registries.BLOCK.get(id);
+            Block block = Registry.BLOCK.get(id);
             for (int j = 1; j < C3Config.MaxCompressionLevel + 1; j++) {
                 String newPath = "compressed_" + id.getPath() + '_' + j;
                 Block variant = new CompressedBlock(FabricBlockSettings.copyOf(block), j - 1);
                 C3Util.addEntry(variant);
-                Registry.register(Registries.BLOCK, new Identifier(C3.getModid(), newPath), variant);
+                Registry.register(Registry.BLOCK, new Identifier(C3.getModid(), newPath), variant);
                 Item blockItem = new BlockItem(variant, new Item.Settings());
-                Registry.register(Registries.ITEM, new Identifier(C3.getModid(), newPath), blockItem);
+                Registry.register(Registry.ITEM, new Identifier(C3.getModid(), newPath), blockItem);
 
                 // Runtime recipes
                 if (j == 1) {
@@ -38,7 +37,7 @@ public class C3Registry {
                     ));
                 } else {
                     String neededMat = "compressed_" + id.getPath() + '_' + (j- 1) ;
-                    Block temp = Registries.BLOCK.get(C3.ID(neededMat));
+                    Block temp = Registry.BLOCK.get(C3.ID(neededMat));
 
                     C3.RESOURCE_PACK.addRecipe(C3.ID(newPath), JRecipe.shaped(
                             JPattern.pattern("XXX", "XXX", "XXX"),
@@ -54,7 +53,7 @@ public class C3Registry {
                     ));
                 } else {
                     String neededMat = "compressed_" + id.getPath() + '_' + (j- 1) ;
-                    Block temp = Registries.BLOCK.get(C3.ID(neededMat));
+                    Block temp = Registry.BLOCK.get(C3.ID(neededMat));
 
                     C3.RESOURCE_PACK.addRecipe(C3.ID(newPath + "_to_" + neededMat), JRecipe.shapeless(
                             JIngredients.ingredients().add(JIngredient.ingredient().item(blockItem)),
