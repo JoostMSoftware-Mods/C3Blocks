@@ -10,16 +10,9 @@ import net.devtech.arrp.json.models.JModel;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class C3ClientRegistry {
@@ -28,7 +21,7 @@ public class C3ClientRegistry {
     }
 
     private static final List<Block> blockList = C3Util.getBlockEntries();
-    private static Block block;
+
     public static void registerClient() {
         for (int i = 0; i < C3Config.COMPRESSED_BLOCKS.size(); i++) {
             Identifier id = new Identifier(C3Config.COMPRESSED_BLOCKS.get(i));
@@ -68,6 +61,9 @@ public class C3ClientRegistry {
             }
         }
         C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("itemGroup.c3blocks.group", "C3 Blocks"));
+        C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("config.c3blocks.MaxCompressionLevel", "Max Compression Level"));
+        C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("config.c3blocks.COMPRESSED_BLOCKS", "Compressed Blocks Entries"));
+        C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("item.c3blocks.tooltip", "%s of %s blocks"));
         blockList.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent()));
         blockList.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout()));
     }

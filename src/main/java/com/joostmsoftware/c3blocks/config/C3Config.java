@@ -19,14 +19,14 @@ public class C3Config extends Config {
             Set here your max compression level you want.\s
             Min value is 1 and max value is 9.\s
             These values can be changed upon feedback from users.\s
-            """)
+            """, requiresRestart = true)
     @ConfigEntry.BoundedInteger(min = 1, max = 9)
     public static int MaxCompressionLevel = 9;
 
     @ConfigEntry(comment = """
             Adjust here your blocks you want to add/remove using this config.\s
             Modded blocks supported, just add them here.\s
-            """)
+            """, requiresRestart = true)
     public static List<String> COMPRESSED_BLOCKS = List.of(
             "minecraft:stone",
             "minecraft:dirt",

@@ -3,6 +3,7 @@ package com.joostmsoftware.c3blocks;
 import com.joostmsoftware.c3blocks.block.CompressionBlock;
 import com.joostmsoftware.c3blocks.block.CompressionPillarBlock;
 import com.joostmsoftware.c3blocks.config.C3Config;
+import com.joostmsoftware.c3blocks.item.CompressedBlockItem;
 import net.devtech.arrp.json.loot.JCondition;
 import net.devtech.arrp.json.loot.JEntry;
 import net.devtech.arrp.json.loot.JLootTable;
@@ -33,7 +34,7 @@ public class C3Registry {
                 }
                 C3Util.addEntry(variant);
                 Registry.register(Registries.BLOCK, new Identifier(C3.getModid(), newPath), variant);
-                BlockItem blockItem = new BlockItem(variant, new Item.Settings());
+                BlockItem blockItem = new CompressedBlockItem(variant, new Item.Settings(), j, block);
                 Registry.register(Registries.ITEM, new Identifier(C3.getModid(), newPath), blockItem);
 
                 // Runtime recipes
