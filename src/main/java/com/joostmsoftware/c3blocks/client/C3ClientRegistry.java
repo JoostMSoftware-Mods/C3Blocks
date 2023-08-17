@@ -65,6 +65,9 @@ public class C3ClientRegistry {
 
                 C3.RESOURCE_PACK.addModel(JModel.model(prefixPath(C3.ID(newPath), "block")), prefixPath(C3.ID(newPath), "item"));
                 C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"),JLang.lang().block(C3.ID(newPath), capitalizeString(newPath).replaceAll("[^a-zA-Z0-9]", " ") + "x"));
+                C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("config.c3blocks.MaxCompressionLevel", "Max Compression Level"));
+                C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("config.c3blocks.COMPRESSED_BLOCKS", "Compressed Blocks Entries"));
+                C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("item.c3blocks.tooltip", "%s of %s blocks"));
             }
         }
         C3.RESOURCE_PACK.mergeLang(C3.ID("en_us"), JLang.lang().entry("itemGroup.c3blocks.group", "C3 Blocks"));
