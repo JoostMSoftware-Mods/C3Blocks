@@ -1,6 +1,7 @@
 package com.joostmsoftware.c3blocks;
 
 import com.joostmsoftware.c3blocks.config.C3Config;
+import com.joostmsoftware.c3blocks.registry.C3Registry;
 import lombok.Getter;
 import net.devtech.arrp.api.RuntimeResourcePack;
 import net.fabricmc.api.ModInitializer;

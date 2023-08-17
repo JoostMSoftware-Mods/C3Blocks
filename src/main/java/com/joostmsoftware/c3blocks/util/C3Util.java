@@ -1,4 +1,4 @@
-package com.joostmsoftware.c3blocks;
+package com.joostmsoftware.c3blocks.util;
 
 import lombok.Getter;
 import net.minecraft.block.Block;

@@ -1,8 +1,10 @@
-package com.joostmsoftware.c3blocks;
+package com.joostmsoftware.c3blocks.registry;
 
+import com.joostmsoftware.c3blocks.C3;
 import com.joostmsoftware.c3blocks.block.CompressedBlock;
 import com.joostmsoftware.c3blocks.block.CompressedPillarBlock;
 import com.joostmsoftware.c3blocks.config.C3Config;
+import com.joostmsoftware.c3blocks.util.C3Util;
 import net.devtech.arrp.json.loot.JCondition;
 import net.devtech.arrp.json.loot.JEntry;
 import net.devtech.arrp.json.loot.JLootTable;
