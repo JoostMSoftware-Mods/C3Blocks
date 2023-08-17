@@ -2,11 +2,15 @@ package com.joostmsoftware.c3blocks.client;
 
 import com.joostmsoftware.c3blocks.C3;
 import com.joostmsoftware.c3blocks.util.C3Util;
-import net.devtech.arrp.api.RRPCallback;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.loader.impl.FabricLoaderImpl;
+import net.fabricmc.loader.impl.launch.FabricLauncher;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.resource.ResourceType;
+import pers.solid.brrp.v1.RRPEventHelper;
+import pers.solid.brrp.v1.fabric.api.RRPCallback;
 
 import java.util.List;
 
@@ -16,7 +20,8 @@ public class C3Client implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         C3ClientRegistry.registerClient();
-        RRPCallback.BEFORE_VANILLA.register(resources -> resources.add(C3.RESOURCE_PACK));
+
+        RRPCallback.BEFORE_VANILLA.register(resources -> resources.add(C3.PACK));
 
         FabricItemGroupBuilder.create(C3.ID("group"))
                 .icon(()-> new ItemStack(blockList.get(0)))

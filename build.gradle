@@ -32,8 +32,13 @@ repositories {
 		name = "Shedaniel's Maven"
 		url = "https://maven.shedaniel.me/"
 	}
+
 	maven {
-		url = uri("https://ueaj.dev/maven")
+		url 'https://raw.githubusercontent.com/SolidBlock-cn/mvn-repo/main'
+
+		// If the website above is beyond reach, you may try mirror websites, such as:
+//		 url 'https://raw.nuaa.cf/SolidBlock-cn/mvn-repo/main'
+		// Note that there is no guarantee that the mirror website can be connected stably and contents are not mutated, and that the mirror website above is only an example.
 	}
 }
 
@@ -55,8 +60,12 @@ dependencies {
 	// Mod menu
 	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
-	// ARRP
-	modImplementation("net.devtech:arrp:${arrp_version}")
+	// RRP
+	modImplementation "pers.solid:brrp-fabric:${brrp_version}-${minecraft_version}"
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/c3blocks.accesswidener")
 }
 
 base {

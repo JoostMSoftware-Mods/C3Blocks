@@ -48,8 +48,6 @@ public class C3Config extends Config {
             "minecraft:stripped_dark_oak_log",
             "minecraft:mangrove_log",
             "minecraft:stripped_mangrove_log",
-            "minecraft:cherry_log",
-            "minecraft:stripped_cherry_log",
             "minecraft:jungle_log",
             "minecraft:stripped_jungle_log"
     );

@@ -1,13 +1,20 @@
 package com.joostmsoftware.c3blocks;
 
+import com.joostmsoftware.c3blocks.client.C3ClientRegistry;
 import com.joostmsoftware.c3blocks.config.C3Config;
 import com.joostmsoftware.c3blocks.registry.C3Registry;
 import lombok.Getter;
-import net.devtech.arrp.api.RuntimeResourcePack;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pers.solid.brrp.v1.RRPEventHelper;
+import pers.solid.brrp.v1.api.RuntimeResourcePack;
+import pers.solid.brrp.v1.fabric.api.RRPCallback;
+import pers.solid.brrp.v1.fabric.api.SidedRRPCallback;
 
 public class C3 implements ModInitializer {
 	@Getter
@@ -26,7 +33,7 @@ public class C3 implements ModInitializer {
 		return new Identifier(modid, path);
 	}
 
-	public static RuntimeResourcePack RESOURCE_PACK = RuntimeResourcePack.create(modid);
+	public static RuntimeResourcePack PACK = RuntimeResourcePack.create(ID("pack"));
 
 	@Override
 	public void onInitialize() {
@@ -36,6 +43,11 @@ public class C3 implements ModInitializer {
 		config.load();
 
 		C3Registry.registerCommon();
+
+//		PACK.setSidedRegenerationCallback(ResourceType.SERVER_DATA, () -> {
+//			PACK.clearResources(ResourceType.SERVER_DATA);
+//		});
+
 
 		LOGGER.info("Loaded all common entries! Have fun with C3");
 	}
