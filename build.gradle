@@ -56,7 +56,7 @@ dependencies {
 	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
 	// ARRP
-	modImplementation("net.devtech:arrp:0.6.4")
+	modImplementation("net.devtech:arrp:${arrp_version}")
 }
 
 base {
