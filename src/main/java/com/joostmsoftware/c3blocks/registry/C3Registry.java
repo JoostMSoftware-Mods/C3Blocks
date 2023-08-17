@@ -1,5 +1,7 @@
-package com.joostmsoftware.c3blocks;
+package com.joostmsoftware.c3blocks.registry;
 
+import com.joostmsoftware.c3blocks.C3;
+import com.joostmsoftware.c3blocks.util.C3Util;
 import com.joostmsoftware.c3blocks.block.CompressionBlock;
 import com.joostmsoftware.c3blocks.block.CompressionPillarBlock;
 import com.joostmsoftware.c3blocks.config.C3Config;

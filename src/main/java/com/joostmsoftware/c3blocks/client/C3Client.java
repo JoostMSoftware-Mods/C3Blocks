@@ -1,7 +1,7 @@
 package com.joostmsoftware.c3blocks.client;
 
 import com.joostmsoftware.c3blocks.C3;
-import com.joostmsoftware.c3blocks.C3Util;
+import com.joostmsoftware.c3blocks.util.C3Util;
 import net.devtech.arrp.api.RRPCallback;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
