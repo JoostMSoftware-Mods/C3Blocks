@@ -1,20 +1,13 @@
 package com.joostmsoftware.c3blocks;
 
-import com.joostmsoftware.c3blocks.client.C3ClientRegistry;
 import com.joostmsoftware.c3blocks.config.C3Config;
 import com.joostmsoftware.c3blocks.registry.C3Registry;
 import lombok.Getter;
-import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pers.solid.brrp.v1.RRPEventHelper;
 import pers.solid.brrp.v1.api.RuntimeResourcePack;
-import pers.solid.brrp.v1.fabric.api.RRPCallback;
-import pers.solid.brrp.v1.fabric.api.SidedRRPCallback;
 
 public class C3 implements ModInitializer {
 	@Getter
