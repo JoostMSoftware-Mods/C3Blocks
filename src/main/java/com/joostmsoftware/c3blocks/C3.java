@@ -3,11 +3,11 @@ package com.joostmsoftware.c3blocks;
 import com.joostmsoftware.c3blocks.config.C3Config;
 import com.joostmsoftware.c3blocks.registry.C3Registry;
 import lombok.Getter;
-import net.devtech.arrp.api.RuntimeResourcePack;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pers.solid.brrp.v1.api.RuntimeResourcePack;
 
 public class C3 implements ModInitializer {
 	@Getter
@@ -26,7 +26,7 @@ public class C3 implements ModInitializer {
 		return new Identifier(modid, path);
 	}
 
-	public static RuntimeResourcePack RESOURCE_PACK = RuntimeResourcePack.create(modid);
+	public static RuntimeResourcePack PACK = RuntimeResourcePack.create(ID("pack"));
 
 	@Override
 	public void onInitialize() {
