@@ -31,11 +31,12 @@
   "mixins": [
     "c3blocks.mixins.json"
   ],
+  "accessWidener": "c3blocks.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
     "minecraft": ">=1.19",
     "java": ">=17",
-    "advanced_runtime_resource_pack": ">=0.6.5"
+    "brrp_v1": ">=1.0.0"
   }
 }
