@@ -1,6 +1,6 @@
-package com.joostmsoftware.c3blocks.item;
+package com.kirbosoftware.c3blocks.item;
 
-import com.joostmsoftware.c3blocks.block.CompressionBlock;
+import com.kirbosoftware.c3blocks.block.CompressionBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
@@ -14,13 +14,11 @@ import java.util.List;
 
 public class CompressedBlockItem extends BlockItem {
     private final int compressionLevel;
-    private final Block block;
     private final Block parent;
-    public CompressedBlockItem(Block block, Settings settings, int compressionTier, Block parentBlock) {
+    public CompressedBlockItem(CompressionBlock block, Settings settings, int compressionTier, Block parentBlock) {
         super(block, settings);
-        this.compressionLevel = compressionTier;
-        this.block = block;
         this.parent = parentBlock;
+        this.compressionLevel = compressionTier;
     }
 
     @Override

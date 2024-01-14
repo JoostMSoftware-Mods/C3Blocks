@@ -1,4 +1,4 @@
-package com.joostmsoftware.c3blocks.block;
+package com.kirbosoftware.c3blocks.block;
 
 public interface ICompression {
     int getCompressionLevel();

@@ -1,10 +1,11 @@
-package com.joostmsoftware.c3blocks.client;
+package com.kirbosoftware.c3blocks.client;
 
-import com.joostmsoftware.c3blocks.C3;
-import com.joostmsoftware.c3blocks.util.C3Util;
+import com.kirbosoftware.c3blocks.C3;
+import com.kirbosoftware.c3blocks.block.CompressionBlock;
+import com.kirbosoftware.c3blocks.util.C3Util;
+import net.devtech.arrp.api.RRPCallback;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -12,13 +13,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
-import pers.solid.brrp.v1.fabric.api.RRPCallback;
 
 import java.util.List;
 
 public class C3Client implements ClientModInitializer {
 
-    private static final List<Block> blockList = C3Util.getBlockEntries();
+    private static final List<CompressionBlock> blockList = C3Util.getBlockEntries();
     private static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, C3.ID("group"));
 
     @Override

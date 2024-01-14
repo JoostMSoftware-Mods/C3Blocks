@@ -2,15 +2,14 @@
   "schemaVersion": 1,
   "id": "c3blocks",
   "version": "${version}",
-
   "name": "C3 Blocks",
-  "description": "Compacted, Condensed, Compressed blocks aka C3 Blocks ",
+  "description": "A simple compress block mod that adds all the compressed blocks of your desires",
   "authors": [
-    "JoostMSoftware"
+    "KirboSoftware"
   ],
   "contact": {
-    "issues": "https://github.com/JoostMSoftware-Mods/C3Blocks/issues",
-    "sources": "https://github.com/JoostMSoftware-Mods/C3Blocks"
+    "issues": "https://github.com/KirboSoftware-Mods/C3Blocks/issues",
+    "sources": "https://github.com/KirboSoftware-Mods/C3Blocks"
   },
 
   "license": "MIT",
@@ -19,24 +18,22 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.joostmsoftware.c3blocks.C3"
+      "com.kirbosoftware.c3blocks.C3"
     ],
     "client": [
-      "com.joostmsoftware.c3blocks.client.C3Client"
+      "com.kirbosoftware.c3blocks.client.C3Client"
     ],
     "modmenu": [
-      "com.joostmsoftware.c3blocks.compat.ModMenu"
+      "com.kirbosoftware.c3blocks.compat.ModMenu"
     ]
   },
-  "mixins": [
-    "c3blocks.mixins.json"
-  ],
   "accessWidener": "c3blocks.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
-    "minecraft": ">=1.19",
+    "minecraft": ">=1.20.1",
     "java": ">=17",
-    "brrp_v1": ">=1.0.0"
+    "advanced_runtime_resource_pack": ">=0.8.1",
+    "cloth-config": ">=11.1.118"
   }
 }
